@@ -7,6 +7,7 @@ import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Profile from "./components/profile.component";
 import User from "./components/user.component";
+import Products from "./components/products.component";
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 import { history } from './helpers/history';
@@ -46,17 +47,11 @@ class App extends Component {
     return (
       <Router history={history}>
         <div>
-          <nav className="navbar navbar-expand navbar-dark" style={{ backgroundColor: "#A93239" }}>
-            <Link to={"/"} className="navbar-brand"></Link>
-            <div className="navbar-nav mr-auto">
-              {currentUser && (
-                <li className="nav-item"> <Link to={"/user"} className="nav-link"> Resource </Link></li>
-              )}
-            </div>
+          <nav className="navbar navbar-expand navbar-dark" style={{ backgroundColor: "#23272B" }}>
 
             {currentUser ? (
               <div className="navbar-nav ml-auto">
-                <li className="nav-item"><Link to={"/productos"} className="nav-link">Productos</Link></li>
+                <li className="nav-item"><Link to={"/products"} className="nav-link">Productos</Link></li>
                 <li className="nav-item"><Link to={"/profile"} className="nav-link">Perfil</Link></li>
                 <li className="nav-item"><a href="/login" className="nav-link" onClick={this.logOut}> Salir</a></li>
               </div>
@@ -75,6 +70,7 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/profile" component={Profile} />
               <Route exact path="/user" component={User} />
+              <Route exact path="/products" component={Products} />
             </Switch>
           </div>
         </div>
