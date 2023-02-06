@@ -88,8 +88,6 @@ class Products extends Component {
 
     render() {
         const { message } = this.props;
-        // const { products: currentUser } = this.props;
-        // console.log(currentUser);
         return (
 
             <div className="row">
